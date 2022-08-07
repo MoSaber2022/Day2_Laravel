@@ -24,16 +24,13 @@ class UserController extends Controller
         
     }
     function show($id){
-        $users = json_decode(\Illuminate\Support\Facades\File::get(storage_path('users.json')),true);
-        $user = $users[$id-1];
-        return view('users.show' , ['user' => $user] ) ;
+        return view('users.show' ) ;
         
     }
     function store(Request $request){
 
-        $users = json_decode(\Illuminate\Support\Facades\File::get(storage_path('users.json')),true);
 
-        return 'Name: '.$request['name'].'<br>'.'E-mail: '. $request['email'].'<br> stored!!!';
+        return ' store data is done';
         
     }
     function edit($id ){
@@ -48,9 +45,8 @@ class UserController extends Controller
     }
     function destroy($id){
         
-        $users = json_decode(\Illuminate\Support\Facades\File::get(storage_path('users.json')),true);
-        $str = $users[$id]['name'];
-        return " $str account is deleted " ;
+        return "destroy  is done" ;
+
 
     }
 }
